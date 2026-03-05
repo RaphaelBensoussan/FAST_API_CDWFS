@@ -1,9 +1,9 @@
 services:
   fastapi-app:
     build: .
-    container_name: fastapi-container-lite
+    container_name: app-flask-raphael
     ports:
-      - "8000:8000"
+      - "3001:3001"
     volumes:
       - .:/app
     environment:
