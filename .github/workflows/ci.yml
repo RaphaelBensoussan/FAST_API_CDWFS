@@ -27,7 +27,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/app_flask:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/app-flask-raphael:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -46,4 +46,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/app_flask:latest
             docker stop app_flask || true
             docker rm app_flask || true
-            docker run -d --name app_flask -p 3001:3001 ${{ secrets.DOCKERHUB_USERNAME }}/app_flask:latest
+            docker run -d --name app_flask -p 3001:3000 ${{ secrets.DOCKERHUB_USERNAME }}/app_flask:latest
